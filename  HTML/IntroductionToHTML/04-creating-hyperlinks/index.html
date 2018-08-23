@@ -6,14 +6,40 @@
   </head>
 
   <body>
-    <h1>This is my super cool homepage</h1>
+    <h1>超链接示例</h1>
 
+    <p>Want to contact a specific staff member? Find details on our<a href="anatomy-of-a-link.html">contacts page</a>.</p>
+    <!-- 指向相同目录 -->
     <p>Visit my <a href="linked/index.html">project homepage</a>.</p>
+    <!-- 指向子目录 -->
+    <p>Want to write us a letter? Use our <a href="./linked/#identity">mailing address</a>.</p>
+    <!-- 指向文档片段：超链接可以链接到 html 文档的特定部分。-->
+    <p>The <a href="./linked/#identity">company mailing address</a> can be found at the bottom of this page.</p>
+    <!-- 甚至可以用它自己的文档片段参考链接到同一份文件的另一部分 -->
 
-    <p>Want to contact a specific staff member? Find details on our
-      <a href="anatomy-of-a-link.html">contacts page.</a>
+    <h2>绝对URL总是指向相同的位置，不管它在哪里使用；一个相对URL将指向不同的位置，这取决于文件所在的位置。</h2>
+
+    <h2>不要重复 URL 作为链接文本的一部分——URL 看起来很丑，保持你的链接标签尽可能短。</h2>
+
+    <h2>当链接到同一网站的其他位置时，应使用相对链接；当链接到另一个网站时，使用绝对链接。</h2>
+
+    <h2>链接到非 html 资源——留下清晰的指示。</h2>
+    <p><a href="http://www.example.com/large-report.pdf">Download the sales report (PDF, 10MB)</a></p>
+    <p><a href="http://www.example.com/video-stream/">Watch the video (stream opens in separate tab, HD quality)</a></p>
+    <p><a href="http://www.example.com/car-game">Play the car game (requires Flash)</a></p>
+
+    <h2>在下载链接时使用下载属性</h2>
+    <h3>当链接到要下载的资源而不是在浏览器中打开时，可以使用下载属性来提供一个默认的保存文件名，下面是一个下载链接到 Firefox 最新的 Windows 版本的示例：</h3>
+    <p>
+      <a
+        href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+        download="firefox-latest-64bit-installer.exe"
+      >
+        Download Latest Firefox for Windows (64-bit) (English, US)
+      </a>
     </p>
 
-    <p>Want to write us a letter? Use our <a href="contacts.html#Mailing_address">mailing address</a>.</p>
+    <h2>电子邮件链接</h2>
+    <a href="mailto:982252163@qq.com">Send email to LiuQi's email.</a>
   </body>
 </html>
