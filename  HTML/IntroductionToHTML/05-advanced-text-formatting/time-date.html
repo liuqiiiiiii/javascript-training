@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>标记时间和日期</h1>
+    <h2>HTML 还支持将时间和日期标记为可供机器识别的格式的 &lt;time&gt;元素</h2>
+
+    <p><time datetime="2016-01-20">23 August 2018</time></p>
+    <!-- Standard simple date -->
+
+    <p><time datetime="2016-01">August 2018</time></p>
+    <!-- Just year and month -->
+
+    <p><time datetime="01-20">23 August</time></p>
+    <!-- Just month and day -->
+
+    <p><time datetime="19:30">22:30</time></p>
+    <!-- Just time, hours and minutes -->
+
+    <p><time datetime="19:30:01.856">22:30:01.67</time></p>
+    <!-- You can do seconds and milliseconds too! -->
+
+    <p><time datetime="2016-01-20T19:30">10.30pm, 23 August 2018</time></p>
+    <!-- Date and time -->
+
+    <p><time datetime="2016-01-20T19:30+01:00">10.30pm, 23 August 2018 is 8.30pm in France</time></p>
+    <!-- Date and time with timezone offset-->
+
+    <p><time datetime="2016-W04">The many week of 2018</time></p>
+    <!-- Calling out a specific week number-->
+  </body>
+</html>
