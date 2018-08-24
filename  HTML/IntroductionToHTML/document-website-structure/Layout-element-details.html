@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>HTML布局元素细节</h1>
+
+    <p><main>&lt;main&gt;</main> 展现了页面内容的独特性。只可以在每一个页面上使用一次 &lt;main&gt;，直接把它放到 &lt;body&gt; 中。在理想情况下，不应该把它嵌套进其他的元素中。</p>
+
+    <p><article>&lt;article&gt;</article> 闭合一块与自身相关的内容，这块内容能够解释它自身而不是页面上其他的内容（例如一篇单独的博客）。</p>
+
+    <p><section>&lt;section&gt;</section> 近似于 &lt;section&gt;，但是它更多的是伴随着由一个单独功能构成的页面（例如一个小型的地图，或者是一组文章的标题和摘要）。它被认为最好的实际应用是用标题作为每一部分（section）的开头；也要注意的是你可以把不同的 &lt;article&gt; 分到不同的 &lt;section&gt; 中，或者把不同的 &lt;section&gt; 分到不同的 &lt;article&gt; 中，这要取决于内容。</p>
+
+    <p><aside>&lt;aside&gt;</aside>包含的内容并不与主要内容有直接的联系，但是它可以提供额外的不直接有联系的信息（术语表条目，作者简介，相关链接等等）。</p>
+
+    <p><header>&lt;header&gt;</header> 展现了一系列的介绍性内容。如果它是&lt;body&gt; 的子元素,它就定义了网站的全局页眉。但是如果它是 &lt;article&gt; 或 &lt;section&gt; 的子元素，它就定义了这些部分的特定的页眉(不要把这些与titles and headings混淆)。</p>
+
+    <p><nav>&lt;nav&gt;</nav>包含了页面主要的导航功能。二级链接等，不会进入导航功能部分。</p>
+
+    <p><footer>&lt;footer&gt;</footer>包含了页面的页脚部分。</p>
+
+    <p><span> &lt;span&gt; </span>是一个行内无语义元素，你应该仅仅当无法找到更好的语义元素包含内容时使用，或者不想增加特定的含义。</span></p>
+
+    <div class="shopping-cart">
+      <h2>Shopping cart</h2>
+      <ul>
+        <li>
+          <p><a href=""><strong>块级元素</strong></a> 块级元素</p>
+          <img src="../02-metadata-in-HTML/logo-icon.png" alt="Silver earrings">
+        </li>
+        <li>
+          ...
+        </li>
+      </ul>
+      <p> &lt;div&gt; 是一个块级无语义元素，你应该仅仅当找不到更好的块级元素时使用，或者不想增加特定的意义。例如，想象当你浏览一个电子商务网站时，有一个购物车部件一直都在你可以选择的地方。</p>
+    </div>
+
+    <p>&lt;br&gt; 在一个段落中创建一个换行；<br>在你想要生成一系列的短行的地方，<br>是唯一能够生成这种结构的元素。<br>例如一个邮寄地址或一首诗。</p>
+
+    <p>&lt;hr&gt; 元素在文档中生成一条水平分割线，<hr>表示文本中主题的变化（例如主题或场景的变化）。<hr>看起来就是一条水平线。</p>
+  </body>
+</html>
