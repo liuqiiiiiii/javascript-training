@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Images in HTML</title>
+  </head>
+  <body>
+    <h1>Images in HTML</h1>
+
+    <h2>1.添加一段说明文字来搭配图片</h2>
+
+    <div>
+      <img
+        src="laugh.gif"
+        alt="傻屌翻跟头装逼成功之后尴尬了"
+        width="400"
+        height="341"
+      >
+
+      <p>这是可以的，<p> 中包含了需要的内容，以及方便使用 CSS 的一种很好的风格。但是这里有一个问题 ，从语义的角度上来讲，&lt;img&gt; 和 &lt;p&gt; 并没有什么联系，这会给使用屏幕阅读的人造成问题。</p>
+    </div>
+
+    <h2>2.更好的方法</h2>
+
+    <p>更好的做法是使用 HTML5 的 &lt;figure&gt; 和 &lt;figcaption&gt; 元素，它正是为此而被创造出来的：为图片提供一个语义容器，在标题和图片之间建立清晰的关联。</p>
+
+    <figure>
+      <img
+        src="laugh.gif"
+        alt="傻屌翻跟头装逼成功之后尴尬了"
+        width="400"
+        height="341"
+      >
+
+      <figcaption>It's embarrassing when you act like a jerk.</figcaption>
+    </figure>
+
+    <p>&lt;figure&gt; 可以是几张图片、一段代码、音视频、方程、表格或别的。</p>
+  </body>
+</html>
