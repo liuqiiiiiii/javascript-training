@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Multiple format video example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>视频</h1>
+
+    <h2>多格式支持</h2>
+    <p>像 MP3、MP4、WebM这些术语叫做容器格式。他们是用不同的方式来播放音频或者视频的 — 也就是说这些容器是用不同的音频轨道、视频轨道、元数据来呈现媒体文件的。</p>
+    <ul>
+      <li>&lt;source src="rabbit320.mp4" type="video/<strong>mp4"&gt;</strong></li>
+      <li>&lt;source src="rabbit320.webm" type="video/<strong>webm"&gt;</strong></li>
+    </ul>
+
+    <h2>属性</h2>
+    <h3>1.无 control 属性</h3>
+    <video>
+      <source src="fitness.mp4" type="video/mp4">
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="fitness.mp4">link to the video</a> instead.</p>
+    </video>
+    <video src="animation.mp4">
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="animation.mp4">link to the video</a> instead.</p> 
+    </video>
+
+    <h3>2.添加 control 属性</h3>
+    <video controls>
+      <source src="fitness.mp4" type="video/mp4">
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="fitness.mp4">link to the video</a> instead.</p>
+    </video>
+    <video src="animation.mp4" controls>
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="animation.mp4">link to the video</a> instead.</p> 
+    </video>
+
+    <h3>3.其他属性</h3>
+    <p>width 和 height：你可以用属性控制视频的尺寸，也可以用 CSS 来控制视频尺寸。 无论使用哪种方式，视频都会保持它原始的长宽比 — 也叫做纵横比。如果你设置的尺寸没有保持视频原始长宽比，那么视频边框将会拉伸，而未被视频内容填充的部分，将会显示默认的背景颜色。</p>
+    <p>autoplay：这个属性会使音频和视频内容立即播放，即使页面的其他部分还没有加载完全。建议不要应用这个属性在你的网站上，因为用户们会比较反感自动播放的媒体文件。</p>
+    <p>loop：这个属性可以让音频或者视频文件循环播放。同样不建议使用，除非有必要。</p>
+    <p>muted： 这个属性会导致媒体播放时，默认关闭声音。</p>
+    <p>poster：这个属性指向了一个图像的URL，这个图像会在视频播放前显示。通常用于粗略的预览或者广告。</p>
+    <p>这个属性被用来缓冲较大的文件，有3个值可选：</p>
+    <ul>
+      <li>"none" ：不缓冲</li>
+      <li>"auto" ：页面加载后缓存媒体文件</li>
+      <li>"metadata" ：仅缓冲文件的元数据</li>
+    </ul>
+  </body>
+</html>
