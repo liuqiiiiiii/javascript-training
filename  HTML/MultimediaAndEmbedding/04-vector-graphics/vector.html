@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>矢量图形 SVG</h1>
+
+    <P>在网上，你会和两种类型的图片打交道——位图和矢量图。</P>
+    <ul>
+      <li>位图使用像素网格来定义 — 一个位图文件精确得包含了每个像素的位置和它的色彩信息。流行的位图格式包括 Bitmap (.bmp), PNG (.png), JPEG (.jpg), and GIF (.gif.)</li>
+      <li>矢量图使用算法来定义 — 一个矢量图文件包含了图形和路径的定义，电脑可以根据这些定义计算出当它们在屏幕上渲染时应该呈现的样子。 SVG 格式可以让我们创造用于 Web 的精彩的矢量图形。</li>
+    </ul>
+
+    <p>
+      SVG 是用于描述矢量图像的XML语言。它基本上是像HTML一样的标记，除了你有许多不同的元素来定义你想要出现在图像中的形状，以及你想要应用于这些形状的效果。
+      SVG用于标记图形，而不是内容。 非常简单，你有一些元素来创建简单图形，如 &lt;circle&gt; 和 &lt;rect&gt;。更高级的SVG功能包括 &lt;feColorMatrix&gt;（使用变换矩阵转换颜色）&lt;animate&gt; （矢量图形的动画部分）和 &lt;mask&gt;。
+    </p>
+
+    <svg
+      version="1.1"
+      baseProfile="full"
+      width="300"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="100%" height="100%" fill="black" />
+      <!-- 方形区域 -->
+      <circle cx="150" cy="100" r="90" fill="blue" />
+      <!-- 圆形区域 -->
+    </svg>
+
+    <h1>将SVG添加到页面</h1>
+
+    <p>要通过 &lt;img%gt; 元素嵌入SVG，你只需要按照预期的方式在 src 属性中引用它。你将需要一个height或width属性（或者如果您的SVG没有固有的宽高比）。</p>
+
+    <img src="star.png" alt="A raster star">
+    <img src="star.svg" alt="A vector star">
+
+    <ol>
+      <li>快速，熟悉的图像语法与alt属性中提供的内置文本等效。</li>
+      <li>可以通过在 &lt;a&gt; 元素嵌套 &lt;img&gt;，使图像轻松地成为超链接。</li>
+    </ol>
+
+    <h2>疑难解答和跨浏览器支持</h2>
+
+    <p>对于不支持SVG（IE 8及更低版本，Android 2.3及更低版本）的浏览器，可以从src属性引用PNG或JPG，并使用srcset属性 只有最近的浏览器才能识别）来引用SVG。 在这种情况下，仅支持浏览器将加载SVG——较旧的浏览器将加载PNG：</p>
+
+    <img src="star.png" alt="triangle with equal sides" srcset="star.svg">
+
+    <h2>如何在HTML中引入SVG</h2>
+
+    <svg width="300" height="200">
+        <rect width="100%" height="100%" fill="green" />
+    </svg>
+
+    <h2>何使用 &lt;iframe&gt; 嵌入SVG</h2>
+
+    <iframe src="satr.svg" width="500" height="500" sandbox>
+        <img src="star.png" alt="Triangle with three unequal sides" />
+    </iframe>
+  </body>
+</html>
