@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>embed 元素和 object 元素</h1>
+
+    <p>&lt;embed&gt;和&lt;object&gt;元素的功能不同于&lt;iframe&gt;—— 这些元素是用来嵌入多种类型的外部内容的通用嵌入工具，其中包括像 Java 小程序和 Flash，PDF（可在浏览器中显示为一个PDF插件）这样的插件技术，甚至像视频，SVG 和图像的内容！</p>
+ 
+    <p>&lt;object&gt; 需要 data 属性，type 属性或两者。如果同时使用这两个，你也可以使用该 typemustmatch 属性。typemustmatch 保持嵌入文件不运行，除非type属性提供正确的媒体类型。typemustmatch 因此，当嵌入来自不同来源的内容（可以防止攻击者通过插件运行任意脚本）时，可以赋予重要的安全优势。</p>
+
+    <embed
+      src="ball.swf"
+      quality="medium"
+      background="#ffffff"
+      width="550"
+      height="400"
+      name="what fuck"
+      allowScriptAccess="sameDomain"
+      allowFullScreen="false"
+      type="application/x-shockwave-flash"
+      pluginspage="http://www.macromedia.com/go/getflashplayer"
+    >
+
+    <p>很可怕，Adobe Flash 工具生成的HTML往往更糟糕，使用嵌入 &lt;object&gt; 元素的 &lt;embed&gt; 元素来覆盖所有的基础（查看一个例子）。甚至有一段时间，Flash 被成功地用作 HTML5 视频的备用内容，但是这种情况越来越被认为是不必要的。</p>
+
+      <object
+      data="reference.pdf"
+      type="application/pdf"
+      width="800"
+      height="1200"
+      typemustmatch
+    >
+      <p>You don't have a PDF plugin, but you can <a href="reference.pdf">download the PDF file.</a></p>
+    </object>
+  </body>
+</html>
