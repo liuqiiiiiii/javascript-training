@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>响应式图片</h1>
+
+    <h2>1.分辨率切换</h2>
+
+    <img
+      src="husky.jpeg"
+      alt="哈士奇图片"
+      titli="哈士奇图片"
+      srcset="
+        husky.jpeg 1820w
+        husky.jpeg 20w
+        husky.jpeg 320w
+      "
+      sizes="
+        (max-width: 320px) 280px,
+        (max-height: 480px) 440px,
+        800px
+      "
+    >
+  </body>
+</html>
