@@ -7,22 +7,34 @@
   <body>
     <h1>响应式图片</h1>
 
-    <h2>1.分辨率切换</h2>
+    <h2>一、分辨率切换，不同的尺寸</h2>
 
     <img
       src="husky.jpeg"
       alt="哈士奇图片"
-      titli="哈士奇图片"
+      title="哈士奇图片"
       srcset="
-        husky.jpeg 1820w
-        husky.jpeg 20w
-        husky.jpeg 320w
+        husky.jpeg 1820w,
+        husky.jpeg 220w,
+        husky.jpeg 800w
       "
       sizes="
         (max-width: 320px) 280px,
-        (max-height: 480px) 440px,
-        800px
+        (max-width: 480px) 400px
       "
     >
+    <h3>1.srcset 定义了我们允许浏览器选择的图像集，以及每个图像的大小。</h3>
+    <ol>
+      <li>一个文件名（husky.jpeg）</li>
+      <li>一个空格</li>
+      <li>图像的固有宽度（注意到这里使用w单位，而不是px，这是图像的真实大小）</li>
+    </ol>
+
+    <h3>2.sizes定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择。</h3>
+    <ol>
+      <li>一个媒体条件</li>
+      <li>一个空格</li>
+      <li>当媒体条件为真时，图像将填充的槽的宽度</li>
+    </ol>
   </body>
 </html>
