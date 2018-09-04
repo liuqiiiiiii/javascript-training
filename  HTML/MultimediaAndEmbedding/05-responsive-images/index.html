@@ -2,12 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- 这行代码会强制地让手机浏览器采用它们真实视图的宽度来加载网页。-->
     <title>test</title>
+    <style>
+      img {
+        width: 320px;
+      }
+    </style>
   </head>
   <body>
-    <h1>响应式图片</h1>
+    <h1>响应式图片——创建自适应图片</h1>
 
-    <h2>一、分辨率切换，不同的尺寸</h2>
+    <h2>一、分辨率切换：不同的尺寸</h2>
 
     <img
       src="husky.jpeg"
@@ -15,8 +22,8 @@
       title="哈士奇图片"
       srcset="
         husky.jpeg 1820w,
-        husky.jpeg 220w,
-        husky.jpeg 800w
+        monkey.jpeg 220w,
+        lq.png 800w
       "
       sizes="
         (max-width: 320px) 280px,
@@ -30,11 +37,32 @@
       <li>图像的固有宽度（注意到这里使用w单位，而不是px，这是图像的真实大小）</li>
     </ol>
 
-    <h3>2.sizes定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择。</h3>
+    <h3>2.sizes 定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择。</h3>
     <ol>
       <li>一个媒体条件</li>
       <li>一个空格</li>
       <li>当媒体条件为真时，图像将填充的槽的宽度</li>
     </ol>
+
+    <h2>分辨率切换: 相同的尺寸, 不同的分辨率</h2>
+    <img
+      srcset="
+        monkey.jpeg,
+        husky.jpeg 1.5x,
+        lq.png 2x
+      "
+      src="lq.png"
+      alt="Elva dressed as a fairy"
+    >
+
+    <h2>艺术方向</h2>
+    <picture>
+      <source media="(max-width: 799px)" srcset="monkey.jpeg">
+      <!--- <source>元素包含一个media属性，这一属性包含一个媒体条件——第一个条件返回真。-->
+      <source media="(min-width: 800px)" srcset="lq.png">
+      <!-- srcset属性包含要显示图片的路径。-->
+      <img src="husky.jpeg" alt="Chris standing up holding his daughter Elva">
+      <!-- 在任何情况下，你都必须在 </picture>之前正确提供一个<img>元素以及它的src和alt属性，否则不会有图片显示。-->
+    </picture>
   </body>
 </html>
