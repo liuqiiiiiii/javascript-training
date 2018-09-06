@@ -2,11 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Table template</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>test</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 2px solid rgb(200,200,200);
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+      }
+
+      td, th {
+        border: 1px solid rgb(190,190,190);
+        padding: 10px 20px;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      caption {
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Table template</h1>
+    <h1>为表格中的列提供共同的样式</h1>
 
     <p>HTML有一种方法可以定义整列数据的样式信息：就是 &lt;col&gt; 和 &lt;colgroup&gt; 元素。它们存在是因为如果你想让一列中的每个数据的样式都一样，那么你就要为每个数据都添加一个样式，这样的做法是令人厌烦和低效的。你通常需要在列中的每个 &lt;td&gt; 或 &lt;th&gt; 上定义样式，或者使用一个复杂的选择器，比如 :nth-child()。</p>
 
@@ -31,34 +55,65 @@
 
     <p>你看看下面</p>
 
+
     <table>
       <colgroup>
-        <col>
-        <col style="background-color: yellow" span="2">
+        <col span="2">
+        <col style="background-color:#97DB9A;">
+        <col style="width:42px;">
+        <col style="background-color:#97DB9A;">
+        <col style="background-color:#DCC48E; border:4px solid #C1437A;">
+        <col span="2" style="width:42px;">
       </colgroup>
       <tr>
-        <th>Data 1</th>
-        <th>Data 2</th>
-        <th>Data 1</th>
-        <th>Data 2</th>
-        <th>Data 1</th>
-        <th>Data 2</th>
+        <td>&nbsp;</td>
+        <th>Mon</th>
+        <th>Tues</th>
+        <th>Wed</th>
+        <th>Thurs</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        <th>Sun</th>
       </tr>
       <tr>
-        <td>Calcutta</td>
-        <td>Orange</td>
+        <th>1st period</th>
+        <td>English</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>German</td>
+        <td>Dutch</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Robots</td>
-        <td>Jazz</td>
+        <th>2nd period</th>
+        <td>English</td>
+        <td>English</td>
+        <td>&nbsp;</td>
+        <td>German</td>
+        <td>Dutch</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Robots</td>
-        <td>Jazz</td>
+        <th>3rd period</th>
+        <td>&nbsp;</td>
+        <td>German</td>
+        <td>&nbsp;</td>
+        <td>German</td>
+        <td>Dutch</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Robots</td>
-        <td>Jazz</td>
+        <th>4th period</th>
+        <td>&nbsp;</td>
+        <td>English</td>
+        <td>&nbsp;</td>
+        <td>English</td>
+        <td>Dutch</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
     </table>
   </body>
