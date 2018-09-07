@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>实现HTML表单</h1>
+
+    <h2>1.&lt;form&gt; 元素</h2>
+
+    <p>所有的表单都从一个 &lt;form&gt; 开始</p>
+
+    <p>这个元素正式定义了一个表单。就像 &lt;div&gt; 元素或 &lt;p&gt; 元素，它是一个容器元素，但它也支持一些特定的属性来配置表单的行为方式。它的所有属性都是可选的，但至少要设置action属性和method属性。</p>
+
+    <h3>&lt;form action="/my-handling-form-page" method="post"&gt;&lt;/form&gt;</h3>
+
+    <p>action 属性定义了在提交表单时所收集的数据的位置(URL)</p>
+    <p>method 属性定义了发送数据的HTTP方法(它可以是“get”或“post”)</p>
+    
+    <h2>2.&lt;label&gt;、&lt;input&gt; 和 &lt;textarea&gt; 元素</h2>
+
+    <form action="/my-handling-form-page" method="post">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" />
+      </div>
+      <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg"></textarea>
+      </div>
+    </form>
+
+    <p>&lt;div&gt; 元素可以方便地构造我们的代码，使样式更简单(参见本文后面的文章)。注意在所有 &lt;label&gt; 元素上使用for属性；它是将标签链接到表单小部件的一种正式方式。这个属性引用相应的小部件的id。这样做有一些好处。最明显的一个好处是允许用户单击标签以激活相应的小部件。</p>
+
+    <p>在 &lt;input&gt; 元素中，最重要的属性是type 属性。这个属性非常重要，因为它定义了 &lt;input&gt; 属性的行为方式。它可以从根本上改变元素，所以要注意它。</p>
+
+    <ul>
+      <li>使用值 text 作为第一个输入——这个属性的默认值。它表示一个基本的单行文本字段，接受任何类型的文本输入。</li>
+      <li>对于第二个输入，使用值email，它定义了一个只接受格式良好的电子邮件地址的单行文本字段。</li>
+      <li>最后一个值将一个基本的文本字段转换为一种“智能”字段，该字段将对用户输入的数据进行一些检查。</li>
+    </ul>
+
+    <p>&lt;input&gt; 标签是一个空元素，这意味着它不需要关闭标签。相反，&lt;textarea&gt; 不是一个空元素，因此必须使用适当的结束标记来关闭它。这对HTML表单的特定特性有影响:定义默认值的方式。要定义 &lt;input&gt; 的默认值，你必须使用value 属性，如下所示：</p>
+
+    <input type="text" value="by default this element is filled with this text" />
+  </body>
+</html>
