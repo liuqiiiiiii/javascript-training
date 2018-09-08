@@ -45,8 +45,29 @@
       <li>最后一个值将一个基本的文本字段转换为一种“智能”字段，该字段将对用户输入的数据进行一些检查。</li>
     </ul>
 
-    <p>&lt;input&gt; 标签是一个空元素，这意味着它不需要关闭标签。相反，&lt;textarea&gt; 不是一个空元素，因此必须使用适当的结束标记来关闭它。这对HTML表单的特定特性有影响:定义默认值的方式。要定义 &lt;input&gt; 的默认值，你必须使用value 属性，如下所示：</p>
+    <p>&lt;input&gt; 标签是一个空元素，这意味着它不需要关闭标签。相反，&lt;textarea&gt; 不是一个空元素，因此必须使用适当的结束标记来关闭它。这对HTML表单的特定特性有影响：定义默认值的方式。要定义 &lt;input&gt; 的默认值，必须使用 value 属性，如下所示：</p>
 
     <input type="text" value="by default this element is filled with this text" />
+
+    <p>相反，如果想定义 &lt;textarea&gt; 的默认值，只需在 &lt;textarea&gt; 元素的开始和结束标记之间放置默认值，就像这样:</p>
+
+    <textarea>by default this element is filled with this text</textarea>
+
+    <h2>3.button 元素</h2>
+    <div class="button">
+      <button type="submit">Send your message</button>
+    </div>
+
+    <p>&lt;button&gt; 元素也接受一个 type 属性，它接受三个值中的一个：submit, reset 或者 button。</p>
+
+    <ul>
+      <li>单击 submit 按钮 发送表单的数据到 %lt;form&gt; 元素的 action 属性所定义的网页。</li>
+      <li>单击 reset 按钮 将所有表单小部件重新设置为它们的默认值。从用户体验的角度来看，这被认为是一种糟糕的做法。</li>
+      <li>单击 button 按钮——不会发生任何事！这听起来很傻，但是用 JavaScript 构建定制按钮非常有用。</li>
+    </ul>
+
+    <h3>拓展</h3>
+
+    <p>可以使用相应类型的 &lt;input&gt; 元素来生成一个按钮，如 &lt;input type="submit"&gt;。&lt;button&gt; 元素的主要优点是，&lt;input&gt; 元素只允许纯文本作为其标签，而 &lt;button&gt; 元素允许完整的HTML内容，允许更复杂、更有创意的按钮文本。</p>
   </body>
 </html>
