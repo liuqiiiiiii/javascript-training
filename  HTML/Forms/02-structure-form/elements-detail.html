@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>&lt;form&gt;元素</h1>
+
+    <p> &lt;form&gt; 元素按照一定的格式定义了表单和确定表单行为的属性。当您想要创建一个 HTML 表单时，都必须从这个元素开始，然后把所有内容都放在里面。许多辅助技术或浏览器插件可以发现 &lt;form&gt; 元素并实现特殊的钩子，使它们更易于使用。</p>
+
+    <p>注意: 严格禁止在一个表单内嵌套另一个表单。嵌套会使表单的行为不可预知，而取决于正在使用的浏览器。</p>
+
+    <h1>&lt;fieldset&gt; 和 &lt;legend&gt; 元素</h1>
+
+    <p>&lt;fieldset&gt; 元素是一种方便的用于创建具有相同目的的小部件组的方式，出于样式和语义目的。 你可以在 &lt;fieldset&gt; 开口标签后加上一个 &lt;legend&gt; 元素来给 &lt;fieldset&gt; 标上标签。&lt;legend&gt; 的文本内容正式地描述 &lt;fieldset&gt; 的用途。它是包含在 &lt;fieldset&gt; 里的。</p>
+
+    <p>许多辅助技术将使用 &lt;legend&gt; 元素，就好像它是相应的 &lt;fieldset&gt; 元素。</p>
+
+    <form>
+      <fieldset>
+        <legend>请选择饮料的体积</legend>
+        <p>
+          <input type="radio" name="size" id="size-1" value="small">
+          <label for="size-1">小杯</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size-2" value="medium">
+          <label for="size-2">中杯</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size-3" value="large">
+          <label for="size-3">大杯</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size-4" value="xlarge">
+          <label for="size-4">超大杯</label>
+        </p>
+      </fieldset>
+    </form>
+
+    <p>最重要的是每当有一组单选按钮时，应该将它们嵌套在 &lt;fieldset&gt; 元素中。还有其他用例，一般来说，&lt;fieldset&gt; 元素也可以用来对表单进行分段。理想情况下，长表单应该在多个页面之间进行拆分，但是如果表单很长，但必须在单个页面上，那么在不同的 fieldsets 中放置不同的相关部分可以提高可用性。</p>
+
+    <h1>label 元素</h1>
+
+    <p>&lt;label&gt; 元素是为 HTML 表单小部件定义标签的正式方法。</p>
+
+    <p>
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="user-name">
+    </p>
+
+    <p>通过他们各自的 for 属性和 id 属性，&lt;label&gt; 标签与 &lt;input&gt; 正确相关联。</p>
+
+    <label for="name">
+      姓名：<input type="text" id="name" name="user_name">
+    </label>
+
+    <p>尽管可以这样做，但人们认为设置 for 属性才是最好的做法，因为一些辅助技术不理解标签和小部件之间的隐式关系。</p>
+
+    <h2>标签如何点击</h2>
+
+    <p>正确设置标签的另一个好处是可以在所有浏览器中单击标签来激活相应的小部件。这对于像文本输入这样的例子很有用，在这里你可以点击标签和输入来聚焦它，它同样对于单选按钮和复选框特别有用——这种控件的可点击区域可能非常小，设置标签来使它们可点击区域变大是非常有用的。</p>
+
+    <form>
+      <p>
+        <label for="lq-1">我爱游泳</label>
+        <input type="checkbox" id="lq-1" name="like" value="1">
+      </p>
+      <p>
+        <label for="lq-2">我爱洗澡</label>
+        <input type="checkbox" id="lq-2" name="love" value="2">
+      </p>
+    </form>
+
+    <h2>多个标签</h2>
+
+    <p>&lt;abbr&gt;元素代表缩写，并可选择提供一个完整的描述：<abbr title="required">*</abbr></p>
+
+    <p>严格地说，可以在一个小部件上放置多个标签，但是这不是一个好主意，因为一些辅助技术可能难以处理它们。在多个标签的情况下，应该将一个小部件和它的标签嵌套在一个 &lt;label&gt; 元素中。</p>
+
+    <!-- So this: -->
+    <div>
+      <label for="username">Name:</label>
+      <input type="text" name="username">
+      <label for="username"><abbr title="required">*</abbr></label>
+    </div>
+
+    <!-- would be better done like this: -->
+    <div>
+      <label for="username">
+        <span>Name:</span>
+        <input id="username" type="text" name="username">
+        <abbr title="required">*</abbr>
+      </label>
+    </div>
+
+    <!-- But this is probably best: -->
+    <div>
+      <label for="username">Name: <abbr title="required">*</abbr></label>
+      <input id="username" type="text" name="username">
+    </div>
+
+    <p>顶部的段落定义了所需元素的规则。它必须在开始时确保像屏幕阅读器这样的辅助技术在用户找到必需的元素之前显示或念出它们。这样，他们就知道星号是什么意思了。根据屏幕阅读器的设置，屏幕阅读器会把星号读为“star”或“required”——不管怎样，都会在第一段中讲清楚。</p>
+
+    <ul>
+      <li>在第一个例子中，标签根本没有和 input 一起被念出来——读出来的只是“edit the blank”，和单独被念出的标签。多个 &lt;label&gt;元素会使屏幕阅读器迷惑。</li>
+      <li>在第二个例子中，事情变得清晰一点了——标签和输入一起，读出的是“name star name edit text”，但标签仍然是单独读出的。这还是有点令人困惑，但这次还是稍微好一点了，因为 input 和 label 联系起来了。</li>
+      <li>第三个例子是最好的——标签是一起读出的，标签和输入读出的是“name star edit text”。</li>
+    </ul>
+  </body>
+</html>
