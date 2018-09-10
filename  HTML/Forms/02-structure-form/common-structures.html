@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <p>除了 &lt;fieldset&gt; 元素之外，使用HTML标题（例如，&lt; h1&gt;、&lt;h2&gt;）和分段（如 &lt;section&gt;）来构造一个复杂的表单也是一种常见的做法。</p>
+
+    <p>最重要的是，你要找到一种你觉得很舒服的风格，而且它也能带来可访问的、可用的形式。它包含了&lt;section&gt; 元素中包含的每个单独的功能部分，以及一个 &lt;fieldset&gt; 来包含单选按钮。</p>
+
+    <h1>构建一个表单结构</h1>
+
+    <p>将联系人信息字段包装在一个单独的 &lt;section&gt; 元素中；</p>
+    <p>此外，有一组两个单选按钮，每个单选按钮都放在自己的列表中(&lt;li&gt;)元素；</p>
+    <p>最后，两个标准文本 &lt;input&gt; 和它们相关的 &lt;label&gt; 元素，每个元素包含在 &lt;p&gt; 中，加上输入密码的密码输入。</p>
+
+    <section>
+      <h2>联系信息</h2>
+
+      <fieldset>
+        <legend>标题</legend>
+        <ul>
+          <li>
+            <label for="title_1">
+              <input type="radio" id="title-1" name="title" value="man" >
+              先生
+            </label>
+          </li>
+          <li>
+            <label for="title_2">
+              <input type="radio" id="title-2" name="title" value="woman">
+              女士
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <p>
+        <label for="name">
+          <span>姓名: </span>
+          <strong>
+            <abbr title="required">*</abbr>
+          </strong>
+        </label>
+        <input type="text" id="name" name="username">
+      </p>
+
+      <p>
+        <label for="mail">
+          <span>邮箱: </span>
+          <strong>
+            <abbr title="required">*</abbr>
+          </strong>
+        </label>
+        <input type="email" id="mail" name="usermail">
+      </p>
+
+      <p>
+        <label for="pwd">
+          <span>密码: </span>
+          <strong>
+            <abbr title="required">*</abbr>
+          </strong>
+        </label>
+        <input type="password" id="pwd" name="password">
+      </p>
+    </section>
+  </body>
+</html>
