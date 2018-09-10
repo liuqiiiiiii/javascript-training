@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>文本输入域</h1>
+
+    <p>文本输入域 &lt;input&gt; 是最基本的表单小部件。这是一种非常方便的方式，可以让用户输入任何类型的数据。但是，一些文本字段可以专门用于满足特定的需求。我们已经看到了几个简单的例子。</p>
+
+    <p>所有文本域都有一些通用规范：</p>
+
+    <ul>
+      <li>它们可以被标记为 readonly (用户不能修改输入值)甚至是 disabled (输入值永远不会与表单数据的其余部分一起发送)。</li>
+      <li>它们可以有一个 placeholder; 这是文本输入框中出现的文本，用来简略描述输入框的目的。</li>
+      <li>它们可以被限制在 size (框的物理尺寸) 和 长度 (可以输入的最大字符数)。</li>
+      <li>如果浏览器支持的话，他们可以从拼写检查中获益。</li>
+    </ul>
+
+    <p>注意：&lt;input&gt; 元素是如此特别因为它几乎可以是任何东西。通过简单设置 type 属性，它可以彻底改变，它用于创建大多数类型的表单小部件，包括单行文本字段、没有文本输入的控件、时间和日期控件和按钮。然而，也有一些例外，比如用来多行输入的 &lt;textarea&gt;。</p>
+
+    <h2>文本域</h2>
+    <p>使用 &lt;input&gt; 元素创建一个单行文本域，该元素的 type 属性值被设置为 text（同样的，如果你不提供 type 属性，text 是默认值）。如果你指定的 type 属性的值在浏览器中是未知的（比如你指定 type="date"，但是浏览器不支持原生日期选择器），属性值 text 就是备用值。</p>
+
+    <input type="text" id="comment" name="comment" value="I'm a text field">
+
+    <h2>E-mail域</h2>
+
+    <p>该类型的域设置为 type 属性的 email 值。当使用 type时，用户需要在域中输入有效的电子邮件地址；任何其他内容都会导致浏览器在提交表单时显示错误。注意，这是客户端错误验证，由浏览器执行。</p>
+
+    <p>通过包括 multiple 属性，它还可以让用户将多个电子邮件地址输入相同的输入(以逗号分隔)。</p>
+
+    <input type="email" id="email" name="email" multiple value="982252163@qq.com">
+
+    <h2>密码域</h2>
+
+    <p>通过type 属性的password值设置该类型域。它不会为输入的文本添加任何特殊的约束，但是它会模糊输入到字段中的值(例如，用点或小行星)，这样它就不能被其他人读取。</p>
+
+    <input type="password" id="pwd" name="pwd">
+
+    <h2>搜索域</h2>
+
+    <p>文本域和搜索域之间的主要区别是浏览器的样式——通常，搜索字段以圆角和/或给定一个“x”来清除输入的值。然而，还有另外一个值得注意的特性：它们的值可以自动保存到同一站点上的多个页面上自动完成。</p>
+
+    <input type="search" id="search" name="search">
+
+    <h2>电话号码域</h2>
+
+    <p>由于世界范围内各种各样的电话号码格式，这种类型的字段不会对用户输入的值执行任何限制(包括字母，等等)。这主要是语义上的差异，尽管在一些设备上(特别是在移动设备上)，可能会出现一个不同的虚拟键盘，更适合输入电话号码。</p>
+
+    <input type="tel" id="tel" name="tel">
+
+    <h2>URL 域</h2>
+
+    <p>它为字段添加了特殊的验证约束，如果输入无效的url，浏览器就会报告错误。</p>
+
+    <input type="url" id="url" name="url">
+
+    <h1>多行文本域</h1>
+
+    <p>多行文本域专指使用 &lt;textarea&gt; 元素，而不是使用 &lt;input&gt; 元素。&lt;textarea&gt; 和常规的单行文本字段之间的主要区别是，允许用户输入包含硬换行符(即按回车)的文本。</p>
+
+    <textarea cols="30" rows="10"></textarea>
+
+    <p>&lt;textarea&gt; 还接受了一些额外的属性，以控制它在几行代码中呈现的效果 (除此以外还有其他几个)：</p>
+
+    <table>
+      <tr>
+        <th>属性名</th>
+        <th>默认值</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>cols</td>
+        <td>20</td>
+        <td>文本控件的可见宽度，平均字符宽度。</td>
+      </tr>
+      <tr>
+        <td>rows</td>
+        <td></td>
+        <td>控制的可见文本行数</td>
+      </tr>
+      <tr>
+        <td>wrap</td>
+        <td>soft</td>
+        <td>表示控件是如何包装文本的。可能的值：hard 或 soft</td>
+      </tr>
+    </table>
+
+    <p>注意，&lt;textarea&gt; 元素与 &lt;input&gt; 元素的编写略有不同。&lt;input&gt; 元素是一个空元素，这意味着它不能包含任何子元素。另一方面，&lt;textarea&gt; 元素是一个常规元素，可以包含文本内容的子元素。</p>
+
+    <ul>
+      <li>如果您想为 &lt;input&gt; 元素定义一个默认值，那么您必须使用 value 属性；另一方面，对于 &lt;textarea&gt; 元素，您将默认的文本放在起始标记和 &lt;textarea&gt; 的结束标记之间。</li>
+      <li>因为它的本质，&lt;textarea&gt; 元素只接受文本内容；这意味着将任何 HTML 内容放入 &lt;textarea&gt; 中都呈现为纯文本内容。</li>
+    </ul>
+  </body>
+</html>
