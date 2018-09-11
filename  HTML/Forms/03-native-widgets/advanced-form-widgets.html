@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+</head>
+  <body>
+    <h1>高级表单部件</h1>
+    <form>
+
+      <h2>数字</h2>
+    
+      <p>用于数字的小部件是用 &lt;input>元素创建的，它的 type 属性设置为 number。这个控件看起来像一个文本域，但是只允许浮点数，并且通常提供一些按钮来增加或减少小部件的值。</p>
+    
+      <p>也可以：</p>
+    
+      <ul>
+        <li>通过设置 min 和 max 属性来约束该值。</li>
+        <li>
+          通过设置 step 属性来指定增加和减少按钮更改小部件的值的数量。</li>
+      </ul>
+
+      <p>
+        <label for="age">你今年多大了？</label>
+        <input type="number" name="age" id="age" min="1" max="10" step="2">
+      </p>
+
+      <h2>滑块</h2>
+
+      <p>另一种选择数字的方法是使用滑块。从视觉上讲，滑块比文本字段更不准确，因此它们被用来选择一个确切值并不重要的数字。滑块是通过把 &lt;input> 元素的 type 属性值设置为 range 来创建的。正确配置滑块是很重要的；为了达到这个目的，我们强烈建议您设置 min、max 和 step 属性。</p>
+
+      <p>添加一个空的 &lt;span> 元素，其中写入滑块的当前值，并在更改时更新它，这需要使用些简单的 JavaScript 来实现。</p>
+
+      <p>这里将对范围输入的引用和两个变量的 span 存储在这里，然后立即将 span 的 textContent 设置为输入的当前 value。最后，我们设置了一个 oninput 事件处理程序，以便每次移动范围滑块时，都会将 span 中的 textContent 更新为新的输入值。</p>
+
+      <p>
+        <label for="beans">你能吃多少个豆子？</label>
+        <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+        <span class="beancount"></span>
+      </p>
+
+      <h2>日期时间选择器</h2>
+
+      <p>对于 web 开发人员来说，收集日期和时间值一直是一场噩梦。HTML5 通过提供一种特殊的控制来处理这种特殊的数据，从而带来了一些增强。使用 &lt;input> 元素和一个 type 属性的适当的值来创建日期和时间控制，这取决于是否希望收集日期、时间或两者。</p>
+
+      <p>所有日期和时间控制都可以使用 min 和 max 属性来约束。</p>
+
+      <p>
+        <label for="myDate">你的出生日期是什么时间？</label>
+        <input type="date" name="myDate" min="1990-01-01" max="2020-12-31" id="myDate">
+      </p>
+
+      <h3>本地时间</h3>
+
+      <p>这将创建一个小部件来显示和选择一个日期，但是没有任何特定的时区信息。</p>
+
+      <p>
+        <label for="meet">我们的会议什么时候开始？</label>
+        <input type="datetime-local" name="meet" id="meet">
+      </p>
+
+      <h3>月份</h3>
+
+      <p>这就创建了一个小部件来显示和挑选一个月。</p>
+
+      <p>
+        <label for="month">你最喜欢一年之中的哪个月份？</label>
+        <input type="month" name="month" id="month">
+      </p>
+
+      <h3>时间</h3>
+
+      <p>这将创建一个小部件来显示并选择一个时间值。</p>
+
+      <p>
+        <label for="time"></label>
+        <input type="time" name="time" id="time">
+      </p>
+
+      <h3>星期</h3>
+
+      <p>这将创建一个小部件来显示并挑选一个星期号和它的年份。</p>
+
+      <input type="week" name="week" id="week">
+
+      <h2>拾色器</h2>
+
+      <p>颜色总是有点难处理，有很多方式来表达它们: RGB 值(十进制或十六进制)、HSL 值、关键字等等。颜色小部件允许用户在文本和可视的方式中选择颜色，颜色小部件是使用 &lt;input> 元素创建的，它的 type 属性设置为值 color。</p>
+
+      <p>
+        <label for="color">你最喜欢的颜色是什么？</label>
+        <input type="color" name="color" id="color">
+      </p>
+    </form>
+
+    <script>
+      var beans = document.querySelector('#beans');
+      var count = document.querySelector('.beancount');
+
+      count.textContent = beans.value;
+
+      beans.oninput = function() {
+        count.textContent = beans.value;
+      }
+    </script>
+  </body>
+</html>
