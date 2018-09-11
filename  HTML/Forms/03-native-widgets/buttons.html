@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Button examples</title>
+</head>
+<body>
+  <h1>按钮</h1>
+
+  <p>HTML表单中有三种按钮</p>
+
+  <ul>
+    <li>submit——将表单数据发送到服务器。</li>
+    <li>reset——将所有表单小部件重新设置为它们的默认值。</li>
+    <li>button——没有自动生效的按钮，但是可以使用 JavaScript 代码进行定制。如果省略了 type 属性，那么这就是默认值。</li>
+  </ul>
+
+  <p>使用 &lt;button> 元素或者 &lt;input> 元素来创建一个按钮，type 属性的值指定显示什么类型的按钮。</p>
+
+  <h2>submit</h2>
+
+  <form>
+    <p>
+      <button type="submit">
+        这是
+        <br>
+        <strong>传说中的 button 提交按钮</strong>
+      </button>
+    </p>
+
+    <p><input type="submit" value="这是传说中 input 的提交按钮"></p>
+
+    <h2>reset</h2>
+
+    <p>
+      <button type="reset">
+        这是
+        <br>
+        <strong>传说中的 button 重置按钮</strong>
+      </button>
+    </p>
+
+    <p><input type="reset" value="这是传说中的 input 重置按钮"></p>
+
+    <h2>button</h2>
+
+    <p>
+      <button type="button">
+        这是
+        <br>
+        <strong>传说中的 button 匿名按钮</strong>
+      </button>
+    </p>
+
+    <p><input type="button" value="这是传说中的 input 匿名按钮"></p>
+  </form>
+
+  <p>不管使用的是 &lt;button> 元素还 &lt;input> 元素，按钮的行为都是一样的。然而，有一些显著的不同之处：</p>
+
+  <ul>
+    <li>从示例中可以看到，&lt;button> 元素允许在它们的标签中使用 HTML 内容，这些内容被插入到打开和关闭 &lt;button> 标签中。另一方面，&lt;input> 元素是空元素；它们的标签被插入到 value 属性中，因此只接受纯文本内容。</li>
+    <li>使用 &lt;button> 元素，可以有一个不同于按钮标签的值(通过将其设置为 value 属性)。</li>
+  </ul>
+
+  <p>从技术上讲，使用 &lt;button> 元素或 &lt;input> 元素定义的按钮几乎没有区别。唯一值得注意的区别是按钮本身的标签。在 &lt;input> 元素中，标签只能是字符数据，而在 &lt;button> 元素中，标签可以是 HTML，因此可以相应地进行样式化。</p>
+</body>
+</html>
