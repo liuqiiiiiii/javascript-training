@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite fruit start</title>
+    <style>
+      input:invalid {
+        border: 2px dashed red;
+      }
+
+      input:valid {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>使用内置表单数据验证</h1>
+
+    <h2>input 元素的验证约束——starting simple</h2>
+
+    <form>
+      <label for="choose">你想吃西瓜还是烧烤？</label>
+      <input type="" name="like" id="choose">
+      <button>提交</button>
+    </form>
+
+    <h2>required 属性</h2>
+
+    <p>最简单的 HTML5 验证功能是 required 属性——如果要使输入成为必需的，则可以使用此属性标记元素。当设置此属性时，如输入为空（输入也将被视为无效），该表单将不会提交（并将显示错误消息）。</p>
+
+    <form>
+      <label for="choose">你想吃瓜子还是瓜皮？</label>
+      <input type="" name="like" id="choose" required>
+      <button>提交</button>
+    </form>
+
+    <h2>使用正则表达式验证</h2>
+
+    <p>常用的验证功能是 pattern 属性，以 Regular Expression 作为 value 值。正则表达式 (regex) 是一个可以用于匹配以字符组成的文本字符串的模式，所以它们是理想的表单验证器 (以及 JavaScript 中其它许多的用途)。 正则表达式相当复杂，在这里只是对工作原理有个基本的了解。</p>
+
+    <ul>
+      <li>a ——匹配一个字符 a，不能匹配 b、aa 等等</li>
+      <li>abc ——匹配 a，其次 b，最后 c</li>
+      <li>a* ——匹配字符 a，0 个或者多个；a+ 代表至少匹配一个或者多个</li>
+      <li>[^a] ——匹配一个字符，但它不能是 a</li>
+      <li>a|b ——匹配一个字符 a 或者 b</li>
+      <li>[abc] ——匹配一个字符，它可以是 a、b 或 c</li>
+      <li>[^abc] ——匹配一个字符，但它不可以是 a、b 或 c</li>
+      <li>[a-z] ——匹配字符范围 a-z 且全部小写。你可以使用 [A-z] 涵盖大小写，或 [A-Z] 来限制必须大写</li>
+      <li>a.c ——匹配字符 a，中间匹配任意一个字符，最后匹配字符 c</li>
+      <li>a{5} ——匹配字符 a 五次</li>
+      <li>a{5,7} ——匹配字符 a 五到七次，不能多也不能少</li>
+
+      <p><strong>也可以在这些表达式中使用数字和其他字符</strong></p>
+
+      <li>[ |-] ——匹配一个空格或者中划线</li>
+      <li>[0-9] ——匹配数字范围 0~9</li>
+
+      <p><strong>可以任意地组合这些，可以任意指定不同的部分</strong></p>
+
+      <li>[Ll].*k ——匹配一个大写 L 或者小写的 l，之后匹配一个或多个任意类型的字符，最后匹配一个小写字母 k</li>
+      <li>[A-Z][A-z|-|']+ ——一个大写字母后面跟着匹配一个大小写字母或者中划线或者撇号</li>
+      <li>[0-9]{3}[ |-][0-9]{3}[ |-][0-9]{4} ——简单的匹配一个美国内的电话号码：三个数字 0-9，后面跟着一个空格或者中划线，之后匹配三个数字 0-9，再跟着一个空格或者中划线，最后跟着四个数字 0-9</li>
+    </ul>
+
+    <p>不管怎么说, 来实现这些例子——表单增加一个 pattern 属性。</p>
+
+    <form>
+      <label for="choose">你喜欢吃冬瓜还是西瓜？</label>
+      <input type="" name="like" id="choose" required pattern="wintermelon|watermelon">
+      <button>提交</button>
+    </form>
+
+    <h2>强制条目的长度</h2>
+
+    <p>所有文本框 (&lt;input> 或 &lt;textarea>) 可以强制使用 minlength 和 maxlength 属性。如果值小于该字段 minlength 的值或大于 maxlength 值则无效。浏览器通常不会组织用户在文本字段中输入比预期更长的值，但是可以使用这种细粒度的控件来强制。</p>
+
+    <form>
+      <div>
+        <label for="choose">你喜欢什么瓜？</label>
+        <input id="choose" name="like" required minlength="6" maxlength="6">
+      </div>
+
+      <div>
+        <label for="number">你能吃几个？</label>
+        <input type="number" id="number" name="amount" value="1" min="1" max="10">
+      </div>
+
+      <button>提交</button>
+    </form>
+  </body>
+</html>
