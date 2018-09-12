@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style>
+      form {
+        width: 420px;
+      }
+
+      div {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: inline-block;
+        width: 240px;
+        text-align: right;
+        padding-right: 10px;
+      }
+
+      button, input {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>数据去哪儿了？</h1>
+
+    <p>&lt;form> 元素定义了如何发送数据，它的所有属性都是为了让您配置当用户点击提交按钮时发送的请求，两个最重要的属性是 action 和 method。</p>
+
+    <h2>action 属性</h2>
+
+    <p>这个属性定义了发送数据的位置，它的值必须是一个有效的 URL。如果没有提供此属性，则数据将被发送到包含表单的页面的 URL。</p>
+
+    <h2>method 属性</h2>
+
+    <p>该属性定义了如何发送数据。HTTP 协议提供了几种执行请求的方法；HTML 表单数据可以通过许多不同的数据传输，其中最常见的是 GET 方法和 POST 方法。</p>
+
+    <h3>get 方法</h3>
+
+    <p>GET 方法是浏览器使用的方法，请求服务器返回给定的资源:“嘿，服务器，我想要得到这个资源。在这种情况下，浏览器发送一个空的主体。因为主体是空的，如果使用该方法发送一个表单，那么发送到服务器的数据将被追加到 URL。</p>
+
+    <form action="http://www.liuqi.com" method="get">
+      <div>
+        <label for="say">你想说什么问候语?</label>
+        <input name="say" id="say" value="Hi">
+      </div>
+
+      <div>
+        <label for="to">你想对谁说这些话？</label>
+        <input name="to" value="LiuQi">
+      </div>
+
+      <div><button>发送我的问候语。</button></div>
+    </form>
+
+    <h3>post 方法</h3>
+
+    <p>POST 方法略有不同。这是浏览器在请求响应时使用的一种方法，它需要考虑到 HTTP 请求体中提供的数据:“嘿，服务器，看一下这些数据，然后给我回一个适当的结果。”如果使用该方法发送表单，则将数据追加到 HTTP 请求的主体中。</p>
+
+    <form action="http://www.liuqi.com" method="post">
+      <div>
+        <label for="say">你想说什么问候语?</label>
+        <input name="say" id="say" value="Hi">
+      </div>
+
+      <div>
+        <label for="to">你想对谁说这些话？</label>
+        <input name="to" value="LiuQi">
+      </div>
+
+      <div><button>发送我的问候语。</button></div>
+    </form>
+  </body>
+</html>
