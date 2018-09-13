@@ -7,19 +7,22 @@
   </head>
 
   <body>
-    <h1>使用JavaScript校验表单</h1>
+    <h1>使用 JavaScript 校验表单</h1>
+
+    <h2>HTML5 用于校验约束的 API</h2>
 
     <p>这个简单的表单使用 novalidate 属性关闭浏览器的自动验证；这允许我们使用脚本控制表单验证。但是，这并不禁止支持约束验证 API 的应用和以下 CSS 伪类：:valid、:invalid、:in-range 、:out-of-range 。这意味着，即使浏览器在发送数据之前没有自动检查表单的有效性，您仍然可以自己做，并相应地设置表单的样式。</p>
 
     <form novalidate>
       <p>
         <label for="mail">
-          <span>Please enter an email address:</span>
+          <span>请输入你的邮件地址：</span>
           <input type="email" id="mail" name="mail">
           <span class="error" aria-live="polite"></span>
         </label>
       </p>
-      <button>Submit</button>
+
+      <button>提交</button>
     </form>
   </body>
 
