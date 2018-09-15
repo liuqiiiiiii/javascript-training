@@ -1,0 +1,6 @@
+.select {
+  /* 这将为选项列表创建一个位置上下文 */
+  position: relative;
+  /* 这将使我们的组件成为文本流的一部分，同时又可以调整大小 */
+  display: inline-block;
+}
