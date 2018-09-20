@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>test</title>
+  </head>
+
+  <body>
+    <h1>在隐藏的 iframe 中构建 DOM</h1>
+
+    <button onclick="sendData({test:'ok'})">Click Me!</button>
+  </body>
+
+  <script>
+    // Create the iFrame used to send our data
+    var iframe = document.createElement("iframe");
+    iframe.name = "myTarget";
+
+    // Next, attach the iFrame to the main document
+    window.addEventListener("load", function () {
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+    });
+
+    // This is the function used to actually send the data
+    // It takes one parameter, which is an object populated with key/value pairs.
+    function sendData(data) {
+      var name,
+      form = document.createElement("form"),
+      node = document.createElement("input");
+
+      // Define what happens when the response loads
+      iframe.addEventListener("load", function () {
+        alert("Yeah! Data sent.");
+      });
+
+      form.action = "http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi";
+      form.target = iframe.name;
+
+      for(name in data) {
+        node.name  = name;
+        node.value = data[name].toString();
+        form.appendChild(node.cloneNode());
+      }
+
+      // To be sent, the form needs to be attached to the main document.
+      form.style.display = "none";
+      document.body.appendChild(form);
+
+      form.submit();
+
+      // Once the form is sent, remove it.
+      document.body.removeChild(form);
+    }
+  </script>
+</html>
