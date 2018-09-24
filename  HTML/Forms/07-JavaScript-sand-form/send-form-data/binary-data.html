@@ -82,15 +82,15 @@
           // Describe it as form data
           data += 'content-disposition: form-data; '
           // Define the name of the form data
-                + 'name="' + file.dom.name + '"; '
+          + 'name="' + file.dom.name + '"; '
           // Provide the real name of the file
-                + 'filename="' + file.dom.files[0].name + '"\r\n';
+          + 'filename="' + file.dom.files[0].name + '"\r\n';
           // And the MIME type of the file
           data += 'Content-Type: ' + file.dom.files[0].type + '\r\n';
 
           // There's a blank line between the metadata and the data
           data += '\r\n';
-          
+
           // Append the binary data to our body's request
           data += file.binary + '\r\n';
         }
