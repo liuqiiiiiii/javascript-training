@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>test</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>视力障碍者所用表格</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
 
-<body>
-  <h1>为了视力障碍者而做的表格</h1>
+  <body>
+    <h1>为了视力障碍者而做的表格</h1>
 
-  <h2>scope 属性</h2>
+    <h2>scope 属性</h2>
 
-  <table>
-    <caption>Items Sold August 2016</caption>
-    <thead>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <th colspan="3" scope="colgroup">衣服</th>
-        <th colspan="2" scope="colgroup">配件</th>
-        <th colspan="2" scope="colgroup">哈士奇</th>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <th scope="col">Trousers</th>
-        <th scope="col">Skirts</th>
-        <th scope="col">Dresses</th>
-        <th scope="col">Bracelets</th>
-        <th scope="col">Rings</th>
-        <th scope="col">husky</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th rowspan="3" scope="rowgroup">Belgium</th>
-        <th scope="row">Antwerp</th>
-        <td>56</td>
-        <td>22</td>
-        <td>43</td>
-        <td>72</td>
-        <td>23</td>
-        <td>67</td>
-      </tr>
-      <tr>
-        <th scope="row">Gent</th>
-        <td>46</td>
-        <td>18</td>
-        <td>50</td>
-        <td>61</td>
-        <td>15</td>
-        <td>67</td>
-      </tr>
-      <tr>
-        <th scope="row">Brussels</th>
-        <td>51</td>
-        <td>27</td>
-        <td>38</td>
-        <td>69</td>
-        <td>28</td>
-        <td>67</td>
-      </tr>
-      <tr>
-        <th rowspan="2" scope="rowgroup">The Netherlands</th>
-        <th scope="row">Amsterdam</th>
-        <td>89</td>
-        <td>34</td>
-        <td>69</td>
-        <td>85</td>
-        <td>38</td>
-        <td>67</td>
-      </tr>
-      <tr>
-        <th scope="row">Utrecht</th>
-        <td>80</td>
-        <td>12</td>
-        <td>43</td>
-        <td>36</td>
-        <td>19</td>
-        <td>67</td>
-      </tr>
-    </tbody>
-  </table>
+    <table>
+      <caption>Items Sold August 2016</caption>
 
-  <h2>header 属性和 id</h2>
+      <thead>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <th colspan="3" scope="colgroup">衣服</th>
+          <th colspan="2" scope="colgroup">配件</th>
+          <th colspan="2" scope="colgroup">哈士奇</th>
+        </tr>
 
-  <table>
-    <caption>Items Sold August 2016</caption>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <th scope="col">Trousers</th>
+          <th scope="col">Skirts</th>
+          <th scope="col">Dresses</th>
+          <th scope="col">Bracelets</th>
+          <th scope="col">Rings</th>
+          <th scope="col">husky</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th rowspan="3" scope="rowgroup">Belgium</th>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>22</td>
+          <td>43</td>
+          <td>72</td>
+          <td>23</td>
+          <td>67</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Gent</th>
+          <td>46</td>
+          <td>18</td>
+          <td>50</td>
+          <td>61</td>
+          <td>15</td>
+          <td>67</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Brussels</th>
+          <td>51</td>
+          <td>27</td>
+          <td>38</td>
+          <td>69</td>
+          <td>28</td>
+          <td>67</td>
+        </tr>
+
+        <tr>
+          <th rowspan="2" scope="rowgroup">The Netherlands</th>
+          <th scope="row">Amsterdam</th>
+          <td>89</td>
+          <td>34</td>
+          <td>69</td>
+          <td>85</td>
+          <td>38</td>
+          <td>67</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Utrecht</th>
+          <td>80</td>
+          <td>12</td>
+          <td>43</td>
+          <td>36</td>
+          <td>19</td>
+          <td>67</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>header 属性和 id</h2>
+
+    <table>
+      <caption>Items Sold August 2016</caption>
+
       <thead>
         <tr>
           <td>&nbsp;</td>
@@ -104,6 +112,7 @@
           <th id="rings">Rings</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
           <th rowspan="3" id="belgium">Belgium</th>
@@ -149,5 +158,5 @@
         </tr>
       </tbody>
     </table>
-</body>
+  </body>
 </html>
