@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>form element</title>
   </head>
+
   <body>
     <h1>&lt;form&gt;元素</h1>
 
@@ -20,20 +21,28 @@
     <form>
       <fieldset>
         <legend>请选择饮料的体积</legend>
+
         <p>
           <input type="radio" name="size" id="size-1" value="small">
+
           <label for="size-1">小杯</label>
         </p>
+
         <p>
           <input type="radio" name="size" id="size-2" value="medium">
+
           <label for="size-2">中杯</label>
         </p>
+
         <p>
           <input type="radio" name="size" id="size-3" value="large">
+
           <label for="size-3">大杯</label>
         </p>
+
         <p>
           <input type="radio" name="size" id="size-4" value="xlarge">
+
           <label for="size-4">超大杯</label>
         </p>
       </fieldset>
@@ -47,6 +56,7 @@
 
     <p>
       <label for="name">姓名：</label>
+
       <input type="text" id="name" name="user-name">
     </p>
 
@@ -65,10 +75,13 @@
     <form>
       <p>
         <label for="lq-1">我爱游泳</label>
+
         <input type="checkbox" id="lq-1" name="like" value="1">
       </p>
+
       <p>
         <label for="lq-2">我爱洗澡</label>
+
         <input type="checkbox" id="lq-2" name="love" value="2">
       </p>
     </form>
@@ -82,7 +95,9 @@
     <!-- So this: -->
     <div>
       <label for="username">Name:</label>
+
       <input type="text" name="username">
+
       <label for="username"><abbr title="required">*</abbr></label>
     </div>
 
@@ -90,7 +105,9 @@
     <div>
       <label for="username">
         <span>Name:</span>
+
         <input id="username" type="text" name="username">
+
         <abbr title="required">*</abbr>
       </label>
     </div>
@@ -98,6 +115,7 @@
     <!-- But this is probably best: -->
     <div>
       <label for="username">Name: <abbr title="required">*</abbr></label>
+
       <input id="username" type="text" name="username">
     </div>
 
@@ -105,7 +123,9 @@
 
     <ul>
       <li>在第一个例子中，标签根本没有和 input 一起被念出来——读出来的只是“edit the blank”，和单独被念出的标签。多个 &lt;label&gt;元素会使屏幕阅读器迷惑。</li>
+
       <li>在第二个例子中，事情变得清晰一点了——标签和输入一起，读出的是“name star name edit text”，但标签仍然是单独读出的。这还是有点令人困惑，但这次还是稍微好一点了，因为 input 和 label 联系起来了。</li>
+
       <li>第三个例子是最好的——标签是一起读出的，标签和输入读出的是“name star edit text”。</li>
     </ul>
   </body>

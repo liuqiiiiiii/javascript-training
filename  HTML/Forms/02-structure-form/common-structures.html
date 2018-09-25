@@ -2,17 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>structure</title>
     <link href="style.css" rel="stylesheet">
   </head>
+
   <body>
     <p>除了 &lt;fieldset&gt; 元素之外，使用HTML标题（例如，&lt; h1&gt;、&lt;h2&gt;）和分段（如 &lt;section&gt;）来构造一个复杂的表单也是一种常见的做法。</p>
+
     <p>最重要的是，你要找到一种你觉得很舒服的风格，而且它也能带来可访问的、可用的形式。它包含了&lt;section&gt; 元素中包含的每个单独的功能部分，以及一个 &lt;fieldset&gt; 来包含单选按钮。</p>
 
     <h1>构建一个表单结构</h1>
 
     <p>将联系人信息字段包装在一个单独的 &lt;section&gt; 元素中；</p>
+
     <p>此外，有一组两个单选按钮，每个单选按钮都放在自己的列表中(&lt;li&gt;)元素；</p>
+
     <p>最后，两个标准文本 &lt;input&gt; 和它们相关的 &lt;label&gt; 元素，每个元素包含在 &lt;p&gt; 中，加上输入密码的密码输入。</p>
 
     <section>
@@ -20,17 +24,17 @@
 
       <fieldset>
         <legend>标题</legend>
+
         <ul>
           <li>
             <label for="title-1">
-              <input type="radio" id="title-1" name="title" value="man" >
-              先生
+              <input type="radio" id="title-1" name="title" value="man" >先生
             </label>
           </li>
+
           <li>
             <label for="title-2">
-              <input type="radio" id="title-2" name="title" value="woman">
-              女士
+              <input type="radio" id="title-2" name="title" value="woman">女士
             </label>
           </li>
         </ul>
@@ -39,9 +43,11 @@
       <p>
         <label for="name">
           <span>姓名：</span>
+
           <strong>
             <abbr title="required">*</abbr>
           </strong>
+
           <input type="text" id="name" name="username">
         </label>
       </p>
@@ -49,6 +55,7 @@
       <p>
         <label for="mail">
           <span>邮箱：</span>
+
           <strong>
             <abbr title="required">*</abbr>
           </strong>
@@ -59,17 +66,22 @@
       <p>
         <label for="pwd">
           <span>密码：</span>
+
           <strong>
             <abbr title="required">*</abbr>
           </strong>
         </label>
+
         <input type="password" id="pwd" name="password">
       </p>
     </section>
 
     <p>转到表单的第二个 &lt;section&gt; ——支付信息。在这里，有不同的小部件以及它们的标签，每个都包含在一个 &lt;p&gt; 中。</p>
+
     <p>第一个是选择信用卡类型的下拉菜单(&lt;select&gt;)；</p>
+
     <p>第二个是输入一个信用卡号的类型编号的 &lt;input&gt; 元素；</p>
+
     <p>最后一个是输入date类型的 &lt;input&gt; 元素，用来输入卡片的过期日期（这将在支持浏览器中出现一个日期选择器小部件，并在非支持的浏览器中回退到普通的文本输入）。</p>
 
     <section>
@@ -79,9 +91,12 @@
         <label for="card">
           <span>卡类型：</span>
         </label>
+
         <select id="card" name="usercard">
           <option value="visa">银联</option>
+
           <option value="alipay">支付宝</option>
+
           <option value="wechatpay">微信</option>
         </select>
       </p>
@@ -89,21 +104,26 @@
       <p>
         <label for="number">
           <span>卡号：</span>
+
           <strong>
             <abbr title="required">*</abbr>
           </strong>
         </label>
+
         <input type="text" id="number" name="cardnumber">
       </p>
 
       <p>
         <label for="date">
           <span>密码：</span>
+
           <strong>
             <abbr title="required">*</abbr>
           </strong>
+
           <em>formatted as mm/yy</em>
         </label>
+
         <input type="text" id="password" name="cardpassword">
       </p>
     </section>

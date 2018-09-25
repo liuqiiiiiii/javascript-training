@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>achieve form</title>
   </head>
+
   <body>
-    <h1>实现HTML表单</h1>
+    <h1>实现 HTML 表单</h1>
 
     <h2>1.&lt;form&gt; 元素</h2>
 
@@ -16,6 +17,7 @@
     <h3>&lt;form action="/my-handling-form-page" method="post"&gt;&lt;/form&gt;</h3>
 
     <p>action 属性定义了在提交表单时所收集的数据的位置(URL)</p>
+
     <p>method 属性定义了发送数据的HTTP方法(它可以是“get”或“post”)</p>
     
     <h2>2.&lt;label&gt;、&lt;input&gt; 和 &lt;textarea&gt; 元素</h2>
@@ -23,14 +25,19 @@
     <form action="/my-handling-form-page" method="post">
       <div>
         <label for="name">Name:</label>
+
         <input type="text" id="name" />
       </div>
+
       <div>
         <label for="mail">E-mail:</label>
+
         <input type="email" id="mail" />
       </div>
+
       <div>
         <label for="msg">Message:</label>
+
         <textarea id="msg"></textarea>
       </div>
     </form>
@@ -41,7 +48,9 @@
 
     <ul>
       <li>使用值 text 作为第一个输入——这个属性的默认值。它表示一个基本的单行文本字段，接受任何类型的文本输入。</li>
+
       <li>对于第二个输入，使用值email，它定义了一个只接受格式良好的电子邮件地址的单行文本字段。</li>
+
       <li>最后一个值将一个基本的文本字段转换为一种“智能”字段，该字段将对用户输入的数据进行一些检查。</li>
     </ul>
 
@@ -54,6 +63,7 @@
     <textarea>by default this element is filled with this text</textarea>
 
     <h2>3.button 元素</h2>
+
     <div class="button">
       <button type="submit">Send your message</button>
     </div>
@@ -62,7 +72,9 @@
 
     <ul>
       <li>单击 submit 按钮 发送表单的数据到 %lt;form&gt; 元素的 action 属性所定义的网页。</li>
+
       <li>单击 reset 按钮 将所有表单小部件重新设置为它们的默认值。从用户体验的角度来看，这被认为是一种糟糕的做法。</li>
+
       <li>单击 button 按钮——不会发生任何事！这听起来很傻，但是用 JavaScript 构建定制按钮非常有用。</li>
     </ul>
 

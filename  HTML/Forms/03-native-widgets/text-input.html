@@ -5,6 +5,7 @@
     <title>test</title>
     <link href="styles.css" rel="stylesheet">
   </head>
+
   <body>
     <h1>文本输入域</h1>
 
@@ -14,14 +15,18 @@
 
     <ul>
       <li>它们可以被标记为 readonly (用户不能修改输入值)甚至是 disabled (输入值永远不会与表单数据的其余部分一起发送)。</li>
+
       <li>它们可以有一个 placeholder; 这是文本输入框中出现的文本，用来简略描述输入框的目的。</li>
+
       <li>它们可以被限制在 size (框的物理尺寸) 和 长度 (可以输入的最大字符数)。</li>
+
       <li>如果浏览器支持的话，他们可以从拼写检查中获益。</li>
     </ul>
 
     <p>注意：&lt;input&gt; 元素是如此特别因为它几乎可以是任何东西。通过简单设置 type 属性，它可以彻底改变，它用于创建大多数类型的表单小部件，包括单行文本字段、没有文本输入的控件、时间和日期控件和按钮。然而，也有一些例外，比如用来多行输入的 &lt;textarea&gt;。</p>
 
     <h2>文本域</h2>
+
     <p>使用 &lt;input&gt; 元素创建一个单行文本域，该元素的 type 属性值被设置为 text（同样的，如果你不提供 type 属性，text 是默认值）。如果你指定的 type 属性的值在浏览器中是未知的（比如你指定 type="date"，但是浏览器不支持原生日期选择器），属性值 text 就是备用值。</p>
 
     <input type="text" id="comment" name="comment" value="I'm a text field">
@@ -69,22 +74,33 @@
     <table>
       <tr>
         <th>属性名</th>
+
         <th>默认值</th>
+
         <th>描述</th>
       </tr>
+
       <tr>
         <td>cols</td>
+
         <td>20</td>
+
         <td>文本控件的可见宽度，平均字符宽度。</td>
       </tr>
+
       <tr>
         <td>rows</td>
+
         <td></td>
+
         <td>控制的可见文本行数</td>
       </tr>
+
       <tr>
         <td>wrap</td>
+
         <td>soft</td>
+
         <td>表示控件是如何包装文本的。可能的值：hard 或 soft</td>
       </tr>
     </table>
@@ -93,6 +109,7 @@
 
     <ul>
       <li>如果您想为 &lt;input&gt; 元素定义一个默认值，那么您必须使用 value 属性；另一方面，对于 &lt;textarea&gt; 元素，您将默认的文本放在起始标记和 &lt;textarea&gt; 的结束标记之间。</li>
+
       <li>因为它的本质，&lt;textarea&gt; 元素只接受文本内容；这意味着将任何 HTML 内容放入 &lt;textarea&gt; 中都呈现为纯文本内容。</li>
     </ul>
   </body>

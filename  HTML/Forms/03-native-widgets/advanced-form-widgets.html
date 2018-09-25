@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>test</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>advance form widget</title>
+  </head>
+
   <body>
     <h1>高级表单部件</h1>
+
     <form>
 
       <h2>数字</h2>
@@ -16,11 +18,13 @@
     
       <ul>
         <li>通过设置 min 和 max 属性来约束该值。</li>
+
         <li>通过设置 step 属性来指定增加和减少按钮更改小部件的值的数量。</li>
       </ul>
 
       <p>
         <label for="age">你今年多大了？</label>
+
         <input type="number" name="age" id="age" min="1" max="10" step="2">
       </p>
 
@@ -34,7 +38,9 @@
 
       <p>
         <label for="beans">你能吃多少个豆子？</label>
+
         <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+
         <span class="beancount"></span>
       </p>
 
@@ -46,6 +52,7 @@
 
       <p>
         <label for="myDate">你的出生日期是什么时间？</label>
+
         <input type="date" name="myDate" min="1990-01-01" max="2020-12-31" id="myDate">
       </p>
 
@@ -55,6 +62,7 @@
 
       <p>
         <label for="meet">我们的会议什么时候开始？</label>
+
         <input type="datetime-local" name="meet" id="meet">
       </p>
 
@@ -64,6 +72,7 @@
 
       <p>
         <label for="month">你最喜欢一年之中的哪个月份？</label>
+
         <input type="month" name="month" id="month">
       </p>
 
@@ -73,6 +82,7 @@
 
       <p>
         <label for="time"></label>
+
         <input type="time" name="time" id="time">
       </p>
 
@@ -88,6 +98,7 @@
 
       <p>
         <label for="color">你最喜欢的颜色是什么？</label>
+
         <input type="color" name="color" id="color">
       </p>
     </form>

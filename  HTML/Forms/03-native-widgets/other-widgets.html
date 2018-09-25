@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Other examples</title>
   </head>
+
   <body>
     <h1>其他部件</h1>
 
@@ -16,6 +17,7 @@
 
       <p>
         <label for="file">Choose an image to upload</label>
+
         <input type="file" name="file" id="file" accept="image/*" multiple>
       </p>
 
@@ -32,8 +34,10 @@
       <p><input type="image" name="pos" alt="" src="husky.jpeg"></p>
 
       <p>如果使用图像按钮来提交表单，这个小部件不会提交它的值；相反，在图像上单击的 X 和 Y 坐标是被提交的(坐标是相对于图像的，这意味着图像的左上角表示坐标 0，0)，坐标被发送为两个键/值对：</p>
+
       <ul>
         <li>X 值键是 name 属性的值，后面是字符串“.x”。</li>
+
         <li>Y 值键是 name 属性的值，后面是字符串“.y”。</li>
       </ul>
 
@@ -61,7 +65,9 @@
 
       <ul>
         <li>如果当前值位于该范围的优先部分，则该条是绿色的。</li>
+
         <li>如果当前值位于该范围的平均部分，则该条是黄色的。</li>
+
         <li>如果当前值处于最糟糕的范围，则该条是红色的。</li>
       </ul>
 
