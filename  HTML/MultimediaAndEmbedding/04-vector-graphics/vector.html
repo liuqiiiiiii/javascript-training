@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>SVG</title>
   </head>
   <body>
     <h1>矢量图形 SVG</h1>
 
     <P>在网上，你会和两种类型的图片打交道——位图和矢量图。</P>
+
     <ul>
       <li>位图使用像素网格来定义 — 一个位图文件精确得包含了每个像素的位置和它的色彩信息。流行的位图格式包括 Bitmap (.bmp), PNG (.png), JPEG (.jpg), and GIF (.gif.)</li>
+
       <li>矢量图使用算法来定义 — 一个矢量图文件包含了图形和路径的定义，电脑可以根据这些定义计算出当它们在屏幕上渲染时应该呈现的样子。 SVG 格式可以让我们创造用于 Web 的精彩的矢量图形。</li>
     </ul>
 
@@ -27,6 +29,7 @@
     >
       <rect width="100%" height="100%" fill="black" />
       <!-- 方形区域 -->
+
       <circle cx="150" cy="100" r="90" fill="blue" />
       <!-- 圆形区域 -->
     </svg>
@@ -36,10 +39,12 @@
     <p>要通过 &lt;img%gt; 元素嵌入SVG，你只需要按照预期的方式在 src 属性中引用它。你将需要一个height或width属性（或者如果您的SVG没有固有的宽高比）。</p>
 
     <img src="star.png" alt="A raster star">
+
     <img src="star.svg" alt="A vector star">
 
     <ol>
       <li>快速，熟悉的图像语法与alt属性中提供的内置文本等效。</li>
+
       <li>可以通过在 &lt;a&gt; 元素嵌套 &lt;img&gt;，使图像轻松地成为超链接。</li>
     </ol>
 

@@ -70,8 +70,7 @@
         clear: left;
         padding: 40px 0;
         background: #c13832;
-        box-shadow: inset 0 3px 2px rgba(0,0,0,0.5),
-                    inset 0 -3px 2px rgba(0,0,0,0.5);
+        box-shadow: inset 0 3px 2px rgba(0,0,0,0.5), inset 0 -3px 2px rgba(0,0,0,0.5);
       }
 
       .further-info a {
@@ -96,11 +95,12 @@
       }
     </style>
   </head>
+
   <body>
     <header>
       <h1>Practice</h1>
-      <img src="./originals/firefox_logo-only_RGB.png" alt="Firefox logo">
 
+      <img src="./originals/firefox_logo-only_RGB.png" alt="Firefox logo">
     </header>
 
     <main>
@@ -119,42 +119,41 @@
           <img
             src="./originals/firefox_logo-only_RGB.png"
             alt="OK, very good."
-            srcset="./originals/firefox_logo-only_RGB.png120 120w,
-              ./originals/firefox_logo-only_RGB.png 400w"
-            sizes="(max-width: 480px) 120px,
-              400px"
+            srcset="./originals/firefox_logo-only_RGB.png120 120w, ./originals/firefox_logo-only_RGB.png 400w"
+            sizes="(max-width: 480px) 120px, 400px"
           >
           <!-- 每张图片（除了某个本身就是响应式的）在浏览器的视口的宽度小于等于480px时使用的120px宽的图片，其他情况下选择 400px 的版本。-->
         </a>
+
         <a href="https://www.google.com/">
           <img
             src="./originals/mozilla-dinosaur-head.png"
             alt="OK, very good."
-            srcset="./originals/mozilla-dinosaur-head.png120 120w,
-              ./originals/mozilla-dinosaur-head.png 400w"
-            sizes="(max-width: 480px) 120px,
-              400px"
+            srcset="./originals/mozilla-dinosaur-head.png120 120w, ./originals/mozilla-dinosaur-head.png 400w"
+            sizes="(max-width: 480px) 120px, 400px"
           >
         </a>
+
         <a href="https://www.google.com/">
           <img
             src="./originals/firefox-addons.jpg"
             alt="OK, very good."
-            srcset="./originals/firefox-addons.jpg120 120w,
-              ./originals/firefox-addons.jpg 400w"
-            sizes="(max-width: 480px) 120px,
-              400px"
+            srcset="./originals/firefox-addons.jpg120 120w, ./originals/firefox-addons.jpg 400w"
+            sizes="(max-width: 480px) 120px, 400px"
           >
         </a>
+
         <a href="https://www.google.com/">
           <img src="./originals/mdn.svg" alt="OK, very good.">
         </a>
+
         <div class="clearfix"></div>
       </div>
 
       <div class="red-panda">
         <picture>
           <source media="(max-width: 600px)" srcset="./originals/red-panda600.jpg">
+
           <img src="./originals/red-panda.jpg" alt="OK, very good">
         </picture>
         <!-- 在视口宽度小于等于600px时使用那张比较小的纵向的熊猫图片，在其他情况下则使用大的横向的图片。-->
