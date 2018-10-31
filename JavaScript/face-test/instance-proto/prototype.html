@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>prototype 原型</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      function emlployee(name, age, address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+
+        this.hello = function() {
+          "名字：" + this.name + "年龄：" + this.age + "地址：" + this.address;
+        }
+      }
+
+      var emlploy1 = new employee("刘琦", 23, "河北承德");
+
+      employee.prototype.country = "中国";
+      document.write(employ1, country);
+      document.write("<br>");
+      document.write(employ1,hello());
+    </script>
+  </body>
+</html>

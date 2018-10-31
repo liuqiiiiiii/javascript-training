@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Apply JavaScript example</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function createParagragh() {
+          var para = document.createElement('p');
+          para.textContent = 'you click the button';
+          document.body.appendChild(para);
+        }
+        var buttons = document.querySelectorAll('button');
+
+        for(var i = 0; i<buttons.length; i++) {
+          buttons[i].addEventListener('click', createParagragh);
+        }
+      });
+    </script>
+  </body>
+</html>
