@@ -28,7 +28,8 @@
     <p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
 
     <div class="form">
-      <label for="guessField">请猜数: </label><input type="text" id="guessField" class="guessField">
+      <label for="guessField">请猜数: </label>
+      <input type="text" id="guessField" class="guessField">
       <input type="submit" value="确定" class="guessSubmit">
     </div>
 
@@ -39,7 +40,6 @@
     </div>
 
     <script>
-      // 开始编写 JavaScript 代码
       var randomNumber = Math.floor(Math.random() * 100) + 1;
       var guesses = document.querySelector('.guesses');
       var lastResult = document.querySelector('.lastResult');
@@ -48,9 +48,12 @@
       var guessField = document.querySelector('.guessField');
       var guessCount = 1;
       var resetButton;
+
       guessField.focus();
+
       function checkGuess() {
         var userGuess = Number(guessField.value);
+
         if(guessCount === 1) {
           guesses.textContent = '上次猜的数: ';
         }
@@ -77,7 +80,9 @@
         guessField.value = '';
         guessField.focus();
       }
+
       guessSubmit.addEventListener('click', checkGuess);
+
       function setGameOver() {
         guessField.disabled = true;
         guessSubmit.disabled = true;
@@ -86,6 +91,7 @@
         document.body.appendChild(resetButton);
         resetButton.addEventListener('click', resetGame);
       }
+
       function resetGame() {
         guessCount = 1;
         var resetParas = document.querySelectorAll('.resultParas p');
