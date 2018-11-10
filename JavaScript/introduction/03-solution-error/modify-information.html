@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>猜数字游戏</title>
+
+    <style>
+      html {
+        font-family: sans-serif '微软雅黑';
+      }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <h1>猜数字游戏</h1>
+
+      <p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
+
+<div class="form">
+  <label for="guessField">请猜数：</label><input type="text" id="guessField" class="guessField">
+  <input type="submit" value="确定" class="guessSubmit">
+</div>
+
+<div class="resultParas">
+  <p class="guesses"></p>
+  <p class="lastResult"></p>
+  <p class="lowOrHi"></p>
+</div>
+
+</body>
+
+<script>
+  var randomNumber = Math.floor(Math.random() * 100) + 1;// 调用 Math.random(),它生成一个在0和1之间的十进制随机数，例如 0.5675493843；Math.floor()会舍弃小数部分返回与之最接近的整数。
+  console.log(randomNumber);
+  var guesses = document.querySelector('.guesses');
+  var lastResult = document.querySelector('.lastResult');
+  var lowOrHi = document.querySelector('.lowOrHi');// 此处，我们试图让该变量包含一个指向文档 HTML 中特定元素的引用。我们来检查一下在该行代码执行后变量的值是否为 null。
+  // 使用 document.querySelector() 方法和一个 CSS 选择器来取得一个元素的引用。这里我们需要一个类选择器，它应以一个点开头（.），但被传递到第 47 行的querySelector()方法中的选择器没有点。这是问题所在！将 lowOrHi 改成 .lowOrHi。
+  console.log(lowOrHi);// console.log()是一个非常实用的调试功能，它可以把值打印到控制台，它会将 lowOrHi 的值打印至控制台。打印出来后，此处 lowOrHi 的值为 null，所以第 47 行肯定有问题。
+  var guessSubmit = document.querySelector('.guessSubmit');
+  var guessField = document.querySelector('.guessField');
+  var guessCount = 1;
+  var resetButton;
+
+  function checkGuess() {
+    var userGuess = Number(guessField.value);
+    if(guessCount === 1) {
+      guesses.textContent = '上次猜的数：';
+    }
+    guesses.textContent += userGuess + ' ';
+ 
+    if(userGuess === randomNumber) {
+      lastResult.textContent = '恭喜你！猜对了！';
+      lastResult.style.backgroundColor = 'green';
+      lowOrHi.textContent = '';
+      setGameOver();
+    } else if(guessCount === 10) {
+      lastResult.textContent = '!!!GAME OVER!!!';
+      setGameOver();
+    } else {
+      lastResult.textContent = '你猜错了！';
+      lastResult.style.backgroundColor = 'red';
+      if(userGuess < randomNumber) {
+        lowOrHi.textContent = '你猜低了！';
+      } else if(userGuess > randomNumber) {
+        lowOrHi.textContent = '你猜高了！';// 该行试图将 lowOrHi 变量中的 textContent 属性设置为一个字符串，但是失败了，这是因为 lowOrHi 并不包含预期的内容。为了一探究竟，在代码中查找一下该变量的的其他实例。lowOrHi 最早出现于第 47 行。
+      }
+    }
+ 
+    guessCount++;
+    guessField.value = '';
+    guessField.focus();
+  }
+  guessSubmit.addEventListener('click', checkGuess);// 这里错误显然是我们把函数名写错造成的。请记住，JavaScript 区分大小写，所以任何轻微的不同或大小写问题都会导致出错。将 addeventListener 改为 addEventListener 便可解决。
+  
+  function setGameOver() {
+	  guessField.disabled = true;
+	  guessSubmit.disabled = true;
+	  resetButton = document.createElement('button');
+	  resetButton.textContent = '开始新游戏';
+	  document.body.appendChild(resetButton);
+	  resetButton.addEventListener('click', resetGame);// 因此这里错误显然是我们把函数名写错造成的。请记住，JavaScript 区分大小写，所以任何轻微的不同或大小写问题都会导致出错。将 addeventListener 改为 addEventListener 便可解决。
+  }
+  
+  function resetGame() {
+	  guessCount = 1;
+	
+	  var resetParas = document.querySelectorAll('.resultParas p');
+	  for(var i = 0; i < resetParas.length; i++) {
+		  resetParas[i].textContent = '';
+	  }
+	  resetButton.parentNode.removeChild(resetButton);
+	
+	  guessField.disabled = false;
+	  guessSubmit.disabled = false;
+	  guessField.value = '';
+	  guessField.focus();
+	
+	  lastResult.style.backgroundColor = 'white';
+	
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    console.log(randomNumber);
+  }
+</script>
+</html>

@@ -110,9 +110,14 @@
         
         // 为下次猜测值提交做准备，把 guessCount 变量的值加 1，以使玩家消耗一次机会（++ 是自增操作符，为自身加 1）
         guessCount++;
+
         // 把表单中文本域的值清空
         inputNumber.value = '';
+
         // 重新聚焦于此，准备下一轮游戏
+        // 这一行通过focus() 方法让光标在页面加载完毕时自动放置于 <input>  输入框内，
+        // 这意味着玩家可以马上开始第一次猜测，而无需点击输入框。
+        // 这只是一个小的改进，却提高了可用性——为使用户能投入游戏提供一个良好的视觉线索。
         inputNumber.focus();
       }
 
@@ -137,9 +142,11 @@
       function resetGame() {
         // 将 guessCount 重置为 1
         guessCount = 1;
-        // 清除所有信息段落
-        var resetParas = document.querySelectorAll('.results p');
 
+        // 清除所有信息段落
+        // 这段代码通过 querySelectorAll() 方法创建了一个包含 <div class="resultParas"> 内所有段落的变量
+        // 然后通过循环迭代，删除每个段落的文本内容
+        var resetParas = document.querySelectorAll('.results p');
         for(var i = 0 ; i < resetParas.length ; i++) {
           resetParas[i].textContent = '';
         }
